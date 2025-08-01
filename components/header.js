@@ -23,7 +23,7 @@ export default function Header({activeTab}) {
     { name: 'Products', url: '#', icon: Briefcase },
     { name: 'Categories', url: '#', icon: FileText },
     { name: 'Pumps', url: '/pumps', icon: Droplets },
-    { name: 'Contact', url: '#', icon: Phone },
+    { name: 'Contact', url: '/contact', icon: Phone },
   ];
 
   return (
@@ -47,15 +47,19 @@ export default function Header({activeTab}) {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              <button className={`p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 cursor-pointer hidden sm:block ${activeTab == 'WishList' ? 'border-t-[1px] border-t-solid border-t-[#377DFF]' : ''}`}>
-                <Image
-                  src={favourite}
-                  alt="Cart"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-              </button>
+              <a href='/wishlist'>
+                <div className={`${activeTab == 'Wishlist' ? '-top-2 left-1/2 h-1 bg-[#377DFF] rounded-t-full' : ''}`}></div>
+                <button className={`p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 cursor-pointer hidden sm:block ${activeTab == 'Wishlist' ? 'bg-[#e4ebff]' : ''}`}>
+                  <Image
+                    src={favourite}
+                    alt="WishList"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                </button>
+                {console.log(activeTab)}
+              </a>
               <a href="/cart">
                 <div className={`${activeTab == 'Cart' ? '-top-2 left-1/2 h-1 bg-[#377DFF] rounded-t-full' : ''}`}></div>
                 <button className={`p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 cursor-pointer hidden sm:block ${activeTab == 'Cart' ? 'bg-[#e4ebff]' : ''}`}>
