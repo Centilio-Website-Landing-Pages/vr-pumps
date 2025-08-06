@@ -19,7 +19,7 @@ export default function Header({activeTab}) {
 
   const navItems = [
     { name: 'Home', url: '/', icon: Home },
-    { name: 'About', url: '#', icon: User },
+    { name: 'About', url: '/about', icon: User },
     { name: 'Products', url: '#', icon: Briefcase },
     { name: 'Categories', url: '#', icon: FileText },
     { name: 'Pumps', url: '/pumps', icon: Droplets },
